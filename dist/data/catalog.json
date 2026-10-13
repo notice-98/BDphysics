@@ -1,0 +1,156 @@
+{
+  "source": "PrismarineJS/minecraft-data",
+  "commit": "33a0f3e7323e124a81960a6d6c62df797d69cd85",
+  "versions": {
+    "1.19.4": {
+      "blocks": "blocks-1.19.4.json",
+      "collision": "collision-1.19.4.json",
+      "collisionSourceVersion": "1.19.4",
+      "items": "items-1.19.4.json"
+    },
+    "1.20": {
+      "blocks": "blocks-1.20.json",
+      "collision": "collision-1.20.json",
+      "collisionSourceVersion": "1.20",
+      "items": "items-1.20.json"
+    },
+    "1.20.1": {
+      "blocks": "blocks-1.20.json",
+      "collision": "collision-1.20.json",
+      "collisionSourceVersion": "1.20",
+      "items": "items-1.20.json"
+    },
+    "1.20.2": {
+      "blocks": "blocks-1.20.2.json",
+      "collision": "collision-1.20.2.json",
+      "collisionSourceVersion": "1.20.2",
+      "items": "items-1.20.2.json"
+    },
+    "1.20.3": {
+      "blocks": "blocks-1.20.3.json",
+      "collision": "collision-1.20.3.json",
+      "collisionSourceVersion": "1.20.3",
+      "items": "items-1.20.3.json"
+    },
+    "1.20.4": {
+      "blocks": "blocks-1.20.4.json",
+      "collision": "collision-1.20.3.json",
+      "collisionSourceVersion": "1.20.3",
+      "items": "items-1.20.3.json"
+    },
+    "1.20.5": {
+      "blocks": "blocks-1.20.5.json",
+      "collision": "collision-1.20.5.json",
+      "collisionSourceVersion": "1.20.5",
+      "items": "items-1.20.5.json"
+    },
+    "1.20.6": {
+      "blocks": "blocks-1.20.5.json",
+      "collision": "collision-1.20.5.json",
+      "collisionSourceVersion": "1.20.5",
+      "items": "items-1.20.5.json"
+    },
+    "1.21": {
+      "blocks": "blocks-1.21.1.json",
+      "collision": "collision-1.20.5.json",
+      "collisionSourceVersion": "1.20.5",
+      "items": "items-1.21.1.json"
+    },
+    "1.21.1": {
+      "blocks": "blocks-1.21.1.json",
+      "collision": "collision-1.20.5.json",
+      "collisionSourceVersion": "1.20.5",
+      "items": "items-1.21.1.json"
+    },
+    "1.21.3": {
+      "blocks": "blocks-1.21.3.json",
+      "collision": "collision-1.21.3.json",
+      "collisionSourceVersion": "1.21.3",
+      "items": "items-1.21.3.json"
+    },
+    "1.21.4": {
+      "blocks": "blocks-1.21.4.json",
+      "collision": "collision-1.21.4.json",
+      "collisionSourceVersion": "1.21.4",
+      "items": "items-1.21.4.json"
+    },
+    "1.21.5": {
+      "blocks": "blocks-1.21.5.json",
+      "collision": "collision-1.21.5.json",
+      "collisionSourceVersion": "1.21.5",
+      "items": "items-1.21.5.json"
+    },
+    "1.21.6": {
+      "blocks": "blocks-1.21.6.json",
+      "collision": "collision-1.21.6.json",
+      "collisionSourceVersion": "1.21.6",
+      "items": "items-1.21.6.json"
+    },
+    "1.21.8": {
+      "blocks": "blocks-1.21.8.json",
+      "collision": "collision-1.21.8.json",
+      "collisionSourceVersion": "1.21.8",
+      "items": "items-1.21.8.json"
+    },
+    "1.21.9": {
+      "blocks": "blocks-1.21.9.json",
+      "collision": "collision-1.21.9.json",
+      "collisionSourceVersion": "1.21.9",
+      "items": "items-1.21.9.json"
+    },
+    "1.21.10": {
+      "blocks": "blocks-1.21.9.json",
+      "collision": "collision-1.21.9.json",
+      "collisionSourceVersion": "1.21.9",
+      "items": "items-1.21.9.json"
+    },
+    "1.21.11": {
+      "blocks": "blocks-1.21.11.json",
+      "collision": "collision-1.21.11.json",
+      "collisionSourceVersion": "1.21.11",
+      "items": "items-1.21.11.json"
+    },
+    "26.1": {
+      "blocks": "blocks-26.1.json",
+      "collision": "collision-26.1.json",
+      "collisionSourceVersion": "26.1",
+      "items": "items-26.1.json"
+    },
+    "26.2": {
+      "blocks": "blocks-26.2.json",
+      "collision": "collision-26.2.json",
+      "collisionSourceVersion": "26.2",
+      "items": "items-26.2.json"
+    },
+    "1.21.2": {
+      "blocks": "blocks-1.21.2.json",
+      "collision": "collision-1.21.2.json",
+      "collisionSourceVersion": "1.21.2",
+      "items": "items-1.21.2.json"
+    },
+    "1.21.7": {
+      "blocks": "blocks-1.21.7.json",
+      "collision": "collision-1.21.7.json",
+      "collisionSourceVersion": "1.21.7",
+      "items": "items-1.21.7.json"
+    },
+    "26.1.1": {
+      "blocks": "blocks-26.1.1.json",
+      "collision": "collision-26.1.1.json",
+      "collisionSourceVersion": "26.1.1",
+      "items": "items-26.1.1.json"
+    },
+    "26.1.2": {
+      "blocks": "blocks-26.1.2.json",
+      "collision": "collision-26.1.2.json",
+      "collisionSourceVersion": "26.1.2",
+      "items": "items-26.1.2.json"
+    },
+    "26.3": {
+      "blocks": "blocks-26.3.json",
+      "collision": "collision-26.3.json",
+      "collisionSourceVersion": "26.3",
+      "items": "items-26.3.json"
+    }
+  }
+}

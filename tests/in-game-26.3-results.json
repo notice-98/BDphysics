@@ -1,0 +1,313 @@
+{
+  "date": "2026-10-13",
+  "minecraft": "26.3",
+  "loader": "Fabric 0.19.5",
+  "gameTickRate": 20,
+  "physicsCases": [
+    {
+      "index": 1,
+      "name": "gravity_and_mass",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 2,
+      "name": "elastic_support",
+      "ticks": 80,
+      "status": "pass"
+    },
+    {
+      "index": 3,
+      "name": "reflection_X",
+      "ticks": 20,
+      "status": "pass"
+    },
+    {
+      "index": 4,
+      "name": "reflection_Y",
+      "ticks": 20,
+      "status": "pass"
+    },
+    {
+      "index": 5,
+      "name": "reflection_Z",
+      "ticks": 20,
+      "status": "pass"
+    },
+    {
+      "index": 6,
+      "name": "rotated_wall_collision",
+      "ticks": 20,
+      "status": "pass"
+    },
+    {
+      "index": 7,
+      "name": "high_speed_CCD",
+      "ticks": 20,
+      "status": "pass"
+    },
+    {
+      "index": 8,
+      "name": "cauldron_item_drop",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 9,
+      "name": "friction",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 10,
+      "name": "impulse_timing",
+      "ticks": 40,
+      "status": "pass"
+    },
+    {
+      "index": 11,
+      "name": "force_timing",
+      "ticks": 40,
+      "status": "pass"
+    },
+    {
+      "index": 12,
+      "name": "throw_timing",
+      "ticks": 40,
+      "status": "pass"
+    },
+    {
+      "index": 13,
+      "name": "off_center_torque",
+      "ticks": 40,
+      "status": "pass"
+    },
+    {
+      "index": 14,
+      "name": "nested_group_force",
+      "ticks": 40,
+      "status": "pass"
+    },
+    {
+      "index": 15,
+      "name": "nested_group_throw",
+      "ticks": 40,
+      "status": "pass"
+    },
+    {
+      "index": 16,
+      "name": "hierarchy_fracture_scheduled",
+      "ticks": 80,
+      "status": "pass"
+    },
+    {
+      "index": 17,
+      "name": "hierarchy_fracture_impact",
+      "ticks": 80,
+      "status": "pass"
+    },
+    {
+      "index": 18,
+      "name": "rope_world_anchor",
+      "ticks": 80,
+      "status": "pass"
+    },
+    {
+      "index": 19,
+      "name": "rope_group_mass",
+      "ticks": 80,
+      "status": "pass"
+    },
+    {
+      "index": 20,
+      "name": "rope_two_bodies",
+      "ticks": 80,
+      "status": "pass"
+    },
+    {
+      "index": 21,
+      "name": "spring_tension",
+      "ticks": 80,
+      "status": "pass"
+    },
+    {
+      "index": 22,
+      "name": "spring_compression",
+      "ticks": 80,
+      "status": "pass"
+    },
+    {
+      "index": 23,
+      "name": "spring_stiff_light_body",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 24,
+      "name": "wind_timing_bounds",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 25,
+      "name": "wind_marker_keys_bezier",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 26,
+      "name": "suction_center_hold",
+      "ticks": 160,
+      "status": "pass"
+    },
+    {
+      "index": 27,
+      "name": "magnet_south",
+      "ticks": 40,
+      "status": "pass"
+    },
+    {
+      "index": 28,
+      "name": "magnet_north",
+      "ticks": 40,
+      "status": "pass"
+    },
+    {
+      "index": 29,
+      "name": "magnet_metal",
+      "ticks": 40,
+      "status": "pass"
+    },
+    {
+      "index": 30,
+      "name": "joint_edge",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 31,
+      "name": "joint_vertex",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 32,
+      "name": "axis_pin_X",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 33,
+      "name": "axis_pin_Y",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 34,
+      "name": "axis_pin_Z",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 35,
+      "name": "point_pin_free_rotation",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 36,
+      "name": "custom_hitbox_offset",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 37,
+      "name": "rotated_blockstate_stair",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 38,
+      "name": "body_keys_bezier",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 39,
+      "name": "keyframe_physics_release",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 40,
+      "name": "timeline_speed_segments",
+      "ticks": 70,
+      "status": "pass"
+    },
+    {
+      "index": 41,
+      "name": "explosion_particles",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 42,
+      "name": "explosion_no_particles",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 43,
+      "name": "virtual_support_not_exported",
+      "ticks": 60,
+      "status": "pass"
+    },
+    {
+      "index": 44,
+      "name": "registered_head_ragdoll_drop",
+      "ticks": 80,
+      "status": "pass"
+    },
+    {
+      "index": 45,
+      "name": "ragdoll_joint_self_collision",
+      "ticks": 40,
+      "status": "pass"
+    },
+    {
+      "index": 46,
+      "name": "fixed_scene_sparse_export",
+      "ticks": 20,
+      "status": "pass"
+    }
+  ],
+  "recordedTicks": 2610,
+  "transformChecks": 171280,
+  "componentTolerance": 0.000003,
+  "runtime": {
+    "checks": 3588,
+    "failures": 0,
+    "controls": [
+      "pause",
+      "resume",
+      "reset",
+      "clear"
+    ],
+    "dimensions": [
+      "overworld",
+      "the_nether",
+      "the_end"
+    ],
+    "dimensionTestChunksExplicitlyLoaded": true
+  },
+  "fixedBug": "Selectors without a spatial restriction matched the same anchor in all three dimension passes, advancing three frames per game tick. distance=0.. restricts selectors to the executing dimension.",
+  "skinVerification": {
+    "registeredHeadProfile": "Confirmed minecraft:profile properties in server NBT; this alone does not verify the rendered body texture",
+    "nativePlayerArticulation": "19 parts and 9 joints replayed and checked",
+    "skinAppearance": "The original physics fixture incorrectly replaced all 19 part textures with one registered Steve-head texture. The user observed Steve heads on every part. This was a fixture substitution, not a validated native skin render.",
+    "liveMineSkinUpload": "Not tested: no API key supplied",
+    "fixtureCorrection": "Removed the texture replacement. Future native ragdoll game fixtures require their actual registered per-part textures; no additional game render check was run at the user request.",
+    "previewCorrection": "Registered heads now use the same texture reference in the editor and datapack; local PNGs are used only for unregistered drafts."
+  },
+  "otherVersions": "All 25 exporters checked locally; in-game runs cover 26.3 only"
+}

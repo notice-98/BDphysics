@@ -1,0 +1,11 @@
+Minecraft Java Edition 1.21.4 vanilla visual assets
+
+Original client JAR official source: https://piston-data.mojang.com/v1/objects/a7e5a6024bfd3cd614625aa05629adf760020304/client.jar
+Official metadata: https://piston-meta.mojang.com/v1/packages/010c66f4559d4647c282d581a451cda6d45777db/1.21.4.json
+Official version manifest: https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
+Verified JAR SHA-1: a7e5a6024bfd3cd614625aa05629adf760020304
+Verified original JAR byte length: 28335587
+
+These models, blockstates, item definitions, texture PNGs, and PNG animation metadata were extracted without modifying their contents, except JSON formatting was minified and combined into assets.json. Copyright and other rights in Minecraft assets belong to Mojang Studios / Mojang AB and Microsoft. These extracted assets are not independently MIT-licensed.
+
+Only assets/minecraft/models, blockstates, items, block/item/entity texture PNGs and PNG metadata, and grass/foliage colormaps are included. The original JAR, game code, sounds, and language files are excluded.

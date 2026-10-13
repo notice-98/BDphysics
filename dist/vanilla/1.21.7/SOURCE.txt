@@ -1,0 +1,16 @@
+Minecraft Java Edition 1.21.7 vanilla visual assets
+
+Official version manifest: https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
+Official metadata: https://piston-meta.mojang.com/v1/packages/64723857b1cddf1f7b077a6ff5cc86751b251fbe/1.21.7.json
+Verified metadata SHA-1: 64723857b1cddf1f7b077a6ff5cc86751b251fbe
+Original client JAR official source: https://piston-data.mojang.com/v1/objects/a2db1ea98c37b2d00c83f6867fb8bb581a593e07/client.jar
+Verified original client SHA-1: a2db1ea98c37b2d00c83f6867fb8bb581a593e07
+Verified original client byte length: 29522178
+Korean display-name source: https://resources.download.minecraft.net/a8/a8be85d083704a6fc293ab4808e50afc4a0e43fd
+Verified language SHA-1: a8be85d083704a6fc293ab4808e50afc4a0e43fd
+
+Minecraft models, blockstates, item definitions, PNG textures and animation metadata are extracted without modifying their contents, except JSON formatting is minified and combined into assets.json. PNG paths map to a version-shared SHA-256 texture pool. Only block/item display names are copied from the Korean language file. The original JAR, game code and sounds are excluded.
+
+Copyright and other rights in Minecraft assets belong to Mojang Studios / Mojang AB and Microsoft. These extracted assets are not independently MIT-licensed.
+
+Atlas-derived sprites are generated using the official paletted_permutations definitions and original palette PNGs; source alpha is multiplied by replacement alpha. Atlas sprite aliases are preserved. The engine-generated minecraft:missingno checker sprite is recreated explicitly. Original texture PNG bytes remain unchanged in the shared pool.

@@ -1,0 +1,1 @@
+Five default block textures extracted from the official Minecraft Java 1.21.4 client JAR. Minecraft assets are copyright Mojang Studios / Microsoft. This independent editor is not affiliated with Mojang or Microsoft. No full game client is distributed.

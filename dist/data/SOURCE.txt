@@ -1,0 +1,39 @@
+Source: PrismarineJS/minecraft-data
+Pinned commit: 33a0f3e7323e124a81960a6d6c62df797d69cd85
+Commit date: 2026-10-06T05:31:41Z
+Repository: https://github.com/PrismarineJS/minecraft-data
+Pinned source: https://github.com/PrismarineJS/minecraft-data/tree/33a0f3e7323e124a81960a6d6c62df797d69cd85
+Mappings: https://raw.githubusercontent.com/PrismarineJS/minecraft-data/33a0f3e7323e124a81960a6d6c62df797d69cd85/data/dataPaths.json
+Collision documentation: https://github.com/PrismarineJS/minecraft-data/blob/33a0f3e7323e124a81960a6d6c62df797d69cd85/doc/blockCollisionShapes.md
+
+These JSON assets contain game-derived factual block and item catalogs, state properties and values, and collision bounding-box coordinates. Upstream documentation describes collision shapes as actual in-game collision information with shape indexes per block state. JSON formatting was minified; data values and arrays were preserved. Asset files are deduplicated by their upstream mapped source path. Exact release mappings are recorded in catalog.json; no fallback mappings were added for missing releases.
+
+The upstream repository does not supply a license file at the pinned revision. No MIT license has been invented or added.
+
+Java 26.2 exact runtime collision shapes and catalogs: Complexity-ML/minecraft-data-26.2 commit 2a6a5fd9ebb0d964a73312d11beef596b7ec029b. Extraction uses game getCollisionShape with EmptyBlockGetter and BlockPos.ZERO. See https://github.com/Complexity-ML/minecraft-data-26.2 and https://github.com/Complexity-ML/minecraft-data-generator-26.2. Not copied from a nearby release.
+
+Exact-version supplemental Minecraft Java block collision catalogs
+Collected: 2026-10-11
+Primary catalog source: Minestom/MinestomDataGenerator
+Repository: https://github.com/Minestom/MinestomDataGenerator
+Extractor reference commit: 1d9d47235737f5eb406600776cbbe24c80063491
+The published Maven artifacts contain their own constants.json identifying the exact game version, protocol and DataVersion. These were compared with exact version-tagged Mojang-generated reports from misode/mcmeta. The extractor reference source shows registry state IDs, property values, default state IDs, and BlockState.getCollisionShape(EmptyBlockGetter.INSTANCE, BlockPos.ZERO).
+
+1.21.2 | net.minestom:data:1.21.2-rv1 | SHA1 958738238f90510dfe7639a24c195553dd582f75 | https://repo.maven.apache.org/maven2/net/minestom/data/1.21.2-rv1/data-1.21.2-rv1.jar
+1.21.7 | net.minestom:data:1.21.7-rv1 | SHA1 f8a4b7b02c1dddc01c7e3b7c9945556e298ae27e | https://repo.maven.apache.org/maven2/net/minestom/data/1.21.7-rv1/data-1.21.7-rv1.jar
+26.1.1 | net.minestom:data:26.1.1-rv1 | SHA1 17a59dd09364af30296e6f65dae3208aa9247429 | https://repo.maven.apache.org/maven2/net/minestom/data/26.1.1-rv1/data-26.1.1-rv1.jar
+26.1.2 | net.minestom:data:26.1.2-rv1 | SHA1 7b3508bd96e2350de4342811e428bcd64478345e | https://repo.maven.apache.org/maven2/net/minestom/data/26.1.2-rv1/data-26.1.2-rv1.jar
+26.2 | net.minestom:data:26.2-rv3 | SHA1 6bea321b115d00bca1982f4673c1ab8d12d9c71f | https://repo.maven.apache.org/maven2/net/minestom/data/26.2-rv3/data-26.2-rv3.jar
+26.3 | net.minestom:data:26.3-rv1 | SHA1 e630786394dbdfba73bbb7eddfa73861014c2057 | https://repo.maven.apache.org/maven2/net/minestom/data/26.3-rv1/data-26.3-rv1.jar
+
+Conversion: source property value order is preserved, bool values are true then false, and the last property changes fastest. Every source state was decoded from its actual stateId and compared with its explicit property string. Actual block/item/state/default IDs are preserved. Source AABB collision strings are parsed into six numeric coordinates and deduplicated by exact coordinate arrays. Per-state collisionShape omissions inherit the block default, exactly as defined by the source generator. Every converted state was compared with the source coordinates and with official property/default reports.
+The converted files have the Prismarine blocks-array, items-array and {blocks,shapes} collision layout. Optional Prismarine-specific fields not provided by the sources (material/harvestTools/drops) are omitted. displayName is a readable label generated from the resource ID; translationKey is the real upstream key. The raw complete block and item datasets remain under each version/minestom folder.
+Six version conversions passed; see conversion-validation.json. 26.2 independently matched the Complexity-ML extractor across all 32,366 state IDs/defaults/collision coordinate arrays (zero differences).
+
+Collision scope: static block-local shapes evaluated at BlockPos.ZERO with empty surroundings and no entity context. State-defined fence/wall connections are represented. Entity-dependent/world-dependent special cases and position-seeded plant offsets are not a full-world physics simulator. This is the same extraction scope as the original Prismarine catalogs. Coordinates have not been altered to fit visual models.
+
+Alternative evidence retained: mcbookshelf/mcdata exact-tag per-state catalogs, and exact-tag misode/mcmeta generated block property/default, definition, registry and item component reports. The legacy mcbookshelf 1.21.2 shapes file is outline geometry, not a collision catalog, and was excluded from collision conversion. RosegoldMC fallback catalogs were excluded because they carry previous-version collision geometry forward by name. No nearby-version substitution is used in the converted catalogs.
+
+Minestom extractor source code license: MIT; exact upstream LICENSE is supplied as LICENSE-Minestom.txt. mcbookshelf extractor code license: MPL-2.0; its original LICENSE is retained with its provenance. Game-derived names, state catalogs and coordinates originate in Minecraft Java Edition. Minecraft is a Mojang Studios / Microsoft product. No full game JAR, compiled game code, sound or language bundle is included here.
+
+Legacy schematic ID/metadata mapping: PrismarineJS/minecraft-data data/pc/common/legacy.json (MIT). Block mappings only; properties retained, neighbour-derived stair/door states reconstructed.

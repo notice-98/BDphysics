@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="416" height="416" viewBox="48 61 416 416" role="img" aria-label="BDP">
+<rect x="48" y="61" width="416" height="416" rx="72" fill="#14181E"/>
+<g fill-rule="evenodd">
+<path id="p-top-fold" fill="#65DD9D" transform="matrix(1.72 -1 1.72 1 84 156)" d="M0 0H73L100 27V60L80 80H31V100H0Z M31 23V53H64L75 42V34L64 23Z"/>
+<path id="b-left-fold" fill="#F4767A" transform="matrix(1.72 1 0 2 84 156)" d="M0 0H70L100 24V43L84 51L100 67V84L80 100H0Z M27 24H54L71 35V39L62 44H27Z M27 61H58L72 70V76L62 81H27Z"/>
+<path id="d-right-fold" fill="#6BA4F6" transform="matrix(1.72 -1 0 2 256 256)" d="M0 0H71L100 28V75L75 100H0Z M29 24V76H59L74 61V39L59 24Z"/>
+</g>
+</svg>

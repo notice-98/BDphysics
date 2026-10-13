@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {object,preset,simulate,validateProject} from '../dist/physics.js';
+import {newGroup} from '../dist/structure.js';
+const make=threshold=>{const p={...preset('empty'),duration:1,autoStop:false,gravity:0};p.objects=[object('b1','stone',[-1,5,1],{velocity:[2,0,0]}),object('b2','stone',[1,5,-1])];newGroup(p,['b1','b2']);p.groups[0].threshold=threshold;return p;};
+let p=make(0);validateProject(p);assert.equal(JSON.parse(JSON.stringify(p)).groups[0].threshold,0);const loose=await simulate(p);assert(loose.frames.at(-1)[0].p[0]-p.objects[0].position[0]>1.9);assert(Math.abs(loose.frames.at(-1)[1].p[0]-p.objects[1].position[0])<.001);assert.deepEqual(loose.fractures.map(f=>[f.group,f.time,f.cause]),[['g1',0,'unbound']]);
+p=make(1e6);const rigid=await simulate(p);const offset=f=>f[1].p.map((v,i)=>v-f[0].p[i]);assert(Math.abs(Math.hypot(...offset(rigid.frames.at(-1)))-Math.hypot(...offset(rigid.frames[0])))<.02);assert.equal(rigid.fractures.length,0);
+p=make(0);p.objects[0].velocity=[-2,0,0];p.connections=[{id:'c1',kind:'rope',a:'b1',b:'b2',anchorA:[0,0,0],anchorB:[0,0,0],worldPoint:[0,0,0],length:Math.sqrt(8),thickness:.04,stiffness:40,damping:4,visible:true}];const rope=await simulate(p);assert(rope.frames.every(f=>Math.hypot(...offset(f))<=Math.sqrt(8)+.015),'explicit rope remains effective at zero group cohesion');
+p=make(0);p.objects.forEach(o=>o.fixed=true);const fixed=await simulate(p);assert.equal(fixed.fractures[0].cause,'unbound');assert(fixed.frames.every(f=>f.every((o,i)=>o.p.every((v,j)=>v===p.objects[i].position[j]))));
+p=make(0);p.objects.push(object('b3','stone',[4,7,2],{velocity:[0,0,3]}));const parent=newGroup(p,['b1','b2','b3']);p.groups.find(g=>g.id===parent).threshold=0;p.groups.find(g=>g.id!==parent).threshold=1e6;const nested=await simulate(p);assert.equal(nested.fractures.length,1);assert.equal(nested.fractures[0].group,parent);assert(Math.abs(Math.hypot(...offset(nested.frames.at(-1)))-Math.hypot(...offset(nested.frames[0])))<.02);assert(nested.frames.at(-1)[2].p[2]>4.9);
+for(const threshold of [-.01,NaN,Infinity,1e6+1])assert.throws(()=>validateProject(make(threshold)),/묶음 설정/);validateProject(make(.01));
+console.log('PASS group threshold 0: accepted and preserved, independent bodies, nested cohesion, explicit rope and static recording');
+console.log('PASS positive cohesion retained; negative and nonfinite thresholds rejected');

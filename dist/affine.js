@@ -1,0 +1,14 @@
+import * as THREE from './vendor/three.module.js';
+export function rotateLocal(o,p){return o.rightRotation?new THREE.Vector3().fromArray(p).applyQuaternion(new THREE.Quaternion().fromArray(o.rightRotation)).toArray():p.slice();}
+export function rotateParts(parts,q){if(!q)return parts;const rotation=new THREE.Quaternion().fromArray(q);return parts.map(p=>({...p,c:new THREE.Vector3().fromArray(p.c).applyQuaternion(rotation).toArray(),q:rotation.clone().multiply(new THREE.Quaternion().fromArray(p.q)).toArray()}));}
+// A = U D V^T, with proper rotations on both sides. Unlike ordinary TRS,
+// Minecraft's second rotation preserves shear from nested non-uniform scales.
+export function decomposeAffine(matrix){
+ const position=new THREE.Vector3(),rotation=new THREE.Quaternion(),scale=new THREE.Vector3();matrix.decompose(position,rotation,scale);const rebuilt=new THREE.Matrix4().compose(position,rotation,scale),error=Math.max(...matrix.elements.map((v,i)=>Math.abs(v-rebuilt.elements[i])));if(Number.isFinite(error)&&error<1e-8)return {rotation,scale,right:new THREE.Quaternion()};
+ const e=matrix.elements,A=[[e[0],e[4],e[8]],[e[1],e[5],e[9]],[e[2],e[6],e[10]]],B=Array.from({length:3},(_,i)=>Array.from({length:3},(_,j)=>A.reduce((s,row)=>s+row[i]*row[j],0))),V=[[1,0,0],[0,1,0],[0,0,1]];
+ for(let k=0;k<32;k++){let p=0,q=1;for(let i=0;i<3;i++)for(let j=i+1;j<3;j++)if(Math.abs(B[i][j])>Math.abs(B[p][q])){p=i;q=j;}if(Math.abs(B[p][q])<1e-14)break;const angle=.5*Math.atan2(2*B[p][q],B[q][q]-B[p][p]),c=Math.cos(angle),s=Math.sin(angle),app=B[p][p],aqq=B[q][q],apq=B[p][q];for(let i=0;i<3;i++)if(i!==p&&i!==q){const x=B[i][p],y=B[i][q];B[i][p]=B[p][i]=c*x-s*y;B[i][q]=B[q][i]=s*x+c*y;}B[p][p]=c*c*app-2*s*c*apq+s*s*aqq;B[q][q]=s*s*app+2*s*c*apq+c*c*aqq;B[p][q]=B[q][p]=0;for(let i=0;i<3;i++){const x=V[i][p],y=V[i][q];V[i][p]=c*x-s*y;V[i][q]=s*x+c*y;}}
+ const order=[0,1,2].sort((a,b)=>B[b][b]-B[a][a]),cols=order.map(j=>new THREE.Vector3(V[0][j],V[1][j],V[2][j])),singular=order.map(j=>Math.sqrt(Math.max(0,B[j][j]))),u=cols.map((v,j)=>new THREE.Vector3(...A.map(row=>row[0]*v.x+row[1]*v.y+row[2]*v.z)).multiplyScalar(singular[j]>1e-12?1/singular[j]:0));
+ if(u[0].length()<.5)u[0].set(1,0,0);u[0].normalize();if(u[1].length()<.5)u[1].copy(Math.abs(u[0].x)<.8?new THREE.Vector3(1,0,0):new THREE.Vector3(0,1,0));u[1].addScaledVector(u[0],-u[1].dot(u[0])).normalize();if(u[2].length()<.5)u[2].crossVectors(u[0],u[1]);u[2].normalize();
+ const det=v=>v[0].dot(new THREE.Vector3().crossVectors(v[1],v[2]));if(det(cols)<0){cols[2].negate();u[2].negate();}if(det(u)<0){u[2].negate();singular[2]*=-1;}
+ return {rotation:new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(...u)),scale:new THREE.Vector3(...singular),right:new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(...cols).transpose())};
+}
